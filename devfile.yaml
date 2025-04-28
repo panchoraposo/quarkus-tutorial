@@ -5,9 +5,9 @@ attributes:
   persistVolumes: false
 projects:
   - name: maven
-    source:
-      type: git
-      location: "https://github.com/redhat-developer-demos/quarkus-tutorial.git"
+    git:
+      remotes:
+        origin: "https://github.com/redhat-developer-demos/quarkus-tutorial.git"
       sparseCheckoutDir: .m2
 components:
   - name: centos-quarkus-maven
@@ -53,8 +53,6 @@ components:
   - name: db
     kubernetes:
       uri: https://raw.githubusercontent.com/redhat-developer-demos/quarkus-tutorial/master/component-images.yaml
-      selector:
-        app: database
-volumes:
   - name: m2
+    volume: {}
 commands: []
