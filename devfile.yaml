@@ -7,7 +7,7 @@ projects:
   - name: maven
     git:
       remotes:
-        origin: "https://github.com/redhat-developer-demos/quarkus-tutorial.git"
+        origin: "https://github.com/panchoraposo/quarkus-tutorial.git"
 components:
   - name: quarkus-maven
     container:
