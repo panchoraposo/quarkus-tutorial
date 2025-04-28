@@ -1,5 +1,5 @@
 ---
-apiVersion: 2.0.0
+schemaVersion: 2.2.0
 metadata:
   generateName: quarkus-tutorial-
 attributes:
