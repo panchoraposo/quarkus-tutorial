@@ -11,7 +11,7 @@ projects:
 components:
   - name: quarkus-maven
     container:
-      image: quay.io/fraposo/custom-udi-rhel9
+      image: quay.io/fraposo/custom-udi-rhel9:v1
       env:
         - name: JAVA_OPTS
           value: >-
