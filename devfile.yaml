@@ -10,15 +10,6 @@ projects:
       location: "https://github.com/redhat-developer-demos/quarkus-tutorial.git"
       sparseCheckoutDir: .m2
 components:
-  - name: vscode-yaml
-    plugin:
-      id: redhat/vscode-yaml/latest
-  - name: vscode-xml
-    plugin:
-      id: redhat/vscode-xml/latest
-  - name: quarkus-java11
-    plugin:
-      uri: https://github.com/eclipse/che-plugin-registry/raw/master/v3/plugins/redhat/quarkus-java11/1.3.0/meta.yaml
   - name: centos-quarkus-maven
     container:
       image: quay.io/eclipse/che-quarkus:nightly
@@ -66,7 +57,4 @@ components:
         app: database
 volumes:
   - name: m2
-commands:
-  - id: attach-remote-debugger
-    apply:
-      component: quarkus-java11
+commands: []
