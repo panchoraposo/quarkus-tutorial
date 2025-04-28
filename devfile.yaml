@@ -11,7 +11,7 @@ projects:
 components:
   - name: quarkus-maven
     container:
-      image: registry.redhat.io/devspaces/udi-base-rhel9
+      image: registry.redhat.io/devspaces/udi-rhel9
       env:
         - name: JAVA_OPTS
           value: >-
