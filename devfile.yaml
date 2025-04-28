@@ -9,9 +9,9 @@ projects:
       remotes:
         origin: "https://github.com/redhat-developer-demos/quarkus-tutorial.git"
 components:
-  - name: centos-quarkus-maven
+  - name: quarkus-maven
     container:
-      image: quay.io/eclipse/che-quarkus:nightly
+      image: registry.redhat.io/devspaces/udi-base-rhel9
       env:
         - name: JAVA_OPTS
           value: >-
