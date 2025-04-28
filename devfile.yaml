@@ -8,7 +8,6 @@ projects:
     git:
       remotes:
         origin: "https://github.com/redhat-developer-demos/quarkus-tutorial.git"
-      sparseCheckoutDir: .m2
 components:
   - name: centos-quarkus-maven
     container:
