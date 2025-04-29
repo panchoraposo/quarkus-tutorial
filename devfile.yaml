@@ -11,7 +11,7 @@ projects:
 components:
   - name: quarkus-maven
     container:
-      image: quay.io/fraposo/custom-udi-rhel9:v1
+      image: quay.io/fraposo/custom-udi-rhel9:v1.2
       env:
         - name: JAVA_OPTS
           value: >-
@@ -54,4 +54,16 @@ components:
       uri: https://raw.githubusercontent.com/redhat-developer-demos/quarkus-tutorial/master/component-images.yaml
   - name: m2
     volume: {}
-commands: []
+commands:
+  - id: install-quarkus-cli
+    exec:
+      commandLine: |
+        source "$HOME/.sdkman/bin/sdkman-init.sh" && \
+        sdk install quarkus && \
+        sdk install java 22.3.r17-grl && \
+        sdk default java 22.3.r17-grl
+      component: quarkus-maven
+      workingDir: /projects
+      group:
+        kind: build
+        isDefault: true
