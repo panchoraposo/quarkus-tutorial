@@ -25,7 +25,12 @@ components:
       mountSources: true
       volumeMounts:
         - name: m2
-          path: /home/theia/.m2
+          path: /home/devspaces/.m2
+      command:
+        - "tail"
+      args:
+        - "-f"
+        - "/dev/null"
   - name: m2repo-cache
     container:
       image: quay.io/rhdevelopers/quarkus-maven-repo-cache:1.4.2.Final
@@ -35,10 +40,10 @@ components:
         - name: m2
           path: /work/volumes/.m2
       command:
-        - "/usr/local/bin/che-entrypoint-run.sh"
+        - "tail"
       args:
-        - "sleep"
-        - "infinity"
+        - "-f"
+        - "/dev/null"
   - name: ubi-quarkus-native-image
     container:
       image: quay.io/quarkus/ubi-quarkus-native-image:20.0.0-java11
@@ -54,4 +59,13 @@ components:
       uri: https://raw.githubusercontent.com/redhat-developer-demos/quarkus-tutorial/master/component-images.yaml
   - name: m2
     volume: {}
-commands: []
+
+commands:
+  - id: terminal
+    exec:
+      component: quarkus-maven
+      commandLine: bash
+      workingDir: /projects/maven
+      group:
+        kind: run
+        isDefault: true
